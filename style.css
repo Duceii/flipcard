@@ -1,0 +1,128 @@
+/*Reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Body*/
+body{
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );
+    font-family: Helvetica, sans-serif;
+    color: rgb(211,211,211);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Branch*/
+.card {
+    width: 350px;
+    height: 500px;
+    perspective: 800px;
+}
+.fc{ 
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+}
+.fc:hover{
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+.front,
+.back { 
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(50,50,50,0.25);
+    position: absolute;
+    backface-visibility: hidden;
+    color: #fff;
+}
+.front{
+    background: linear-gradient( 120deg,  rgba(50,50,50,1) 20%, rgba(113, 128, 138,1) 80% ); 
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    color: #fff;
+    font-size: 30px;
+}   
+.back {
+    background: linear-gradient( -120deg,  rgba(50,50,50,1) 20%, rgba(113, 128, 138,1) 80% ); 
+    transform: rotateY(180deg) ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.cb{
+    width: 350px;
+    height: 500px;
+}
+.efc{
+    background: linear-gradient( 120deg,  rgba(50,50,50,1) 20%, rgba(113, 128, 138,1) 80% ); 
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    position: relative;
+}
+.email{
+    display: flex;
+    font-family: system-ui;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    gap: 4rem;
+}
+/*navbar*/
+.bar{
+    position: absolute;
+    top: 50px; 
+    left: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.bar ul li{
+    list-style: none;
+    margin: 0 50px;
+    display: inline-block;
+    position: relative;
+
+}
+.bar ul li a{
+    color:#fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.bar ul li::after{
+    content: '';
+    height: 2px;
+    width: 0;
+    background: #fff;
+    position: absolute;
+    left:0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+.bar ul li:hover::after{
+    width: 100%;
+}
+.ig{
+    color: #fff;
+    top: 170px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 20px;
+    gap: 1rem;
+}
